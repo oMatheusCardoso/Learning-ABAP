@@ -3,7 +3,7 @@
 *&---------------------------------------------------------------------*
 *&
 *&---------------------------------------------------------------------*
-REPORT ZTESTE01 MESSAGE-ID zcurso.
+REPORT ZTESTE01 MESSAGE-ID zcurso."Se adicionar a classe de mensagem aqui não há necessidade de colocar na MESSAGE.
 
 START-OF-SELECTION.
 " MESSAGE s001(zcurso) WITH 'João'. "deixa uma mensagem no trecho abaixo.
