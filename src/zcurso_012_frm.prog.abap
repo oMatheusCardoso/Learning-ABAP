@@ -1,13 +1,17 @@
-FORM calcular_media.
-   ld_media = ( p_1bim + p_2bim + p_3bim + p_4bim ) / 4.
+FORM calcular_media
+  USING ud_1bim ud_2bim ud_3bim ud_4bim
+  CHANGING cd_media.
+  DATA ld_media(12) TYPE p DECIMALS 2.
+  ld_media = ( ud_1bim + ud_2bim + ud_3bim + ud_4bim ) / 4.
+  gd_media = ld_media.
 ENDFORM.
 
 FORM escrever_mensagem.
-   IF ld_media >= 60.
-    ld_mensagem = |APROVADO: A média anual do { p_nome } é { ld_media }.|.
+   IF gd_media >= 60.
+    gd_mensagem = |APROVADO: A média anual do { p_nome } é { gd_media }.|.
   ELSE.
-   	ld_mensagem = |'REPROVADO! A média anual do { p_nome } é  { ld_media }.|.
+   	gd_mensagem = |'REPROVADO! A média anual do { p_nome } é  { gd_media }.|.
   ENDIF.
 
-  WRITE ld_mensagem.
+  WRITE gd_mensagem.
 ENDFORM.
